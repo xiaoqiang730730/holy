@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <script type="text/javascript" src="./common.event.js"></script>
+</head>
+<body>
+    <div id="test"> test</div>
+    <script type="text/javascript">
+        window.onload= function() {
+            var  ho = window.holy.event;
+            ho.sub('test', function(){
+                console.dir(arguments);
+            });
+
+            var test = document.getElementById('test');
+            test.onclick = function(){
+                ho.pub('test', {a:'a',b:'b'});
+            };
+        };
+    </script>
+</body>
+</html>

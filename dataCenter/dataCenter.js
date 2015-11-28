@@ -33,6 +33,7 @@
 				changes.forEach(function(change) {
 					// 让我们获知变化
 					$(_this.$app.find('[ho-tar='+change.name+']')).text(model[change.name]);
+					$(_this.$app.find('[ho-tar='+change.name+']')).val(model[change.name]);
 					console.log(change.type, change.name, model[change.name], change.oldValue||'');
 				});
 			});
